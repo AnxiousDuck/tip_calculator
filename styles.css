@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.card_whole {
+    margin: auto;
+    display: flex;
+    width: calc(50em + 3vw);
+    background-color: aliceblue;
+}
+.calc {
+    padding: 2em;
+    width: 50%;
+    background-color: antiquewhite;
+}
+.display {
+    padding: 2em;
+    width: 50%;
+    background-color: white;
+}
