@@ -2,20 +2,45 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --strongcyan: hsl(172, 67%, 45%);
+    --very_dark_cyan: hsl(183, 100%, 15%);
+    --dark_grayish_cyan: hsl(186, 14%, 43%);
+    --Dark_grayish_cyan: hsl(184, 14%, 56%);
+    --light_grayish_cyan: hsl(185, 41%, 84%);
+    --light_grayish_cyan2: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+}
+body {
+    background-color: var(--light_grayish_cyan);
 }
 .card_whole {
+    padding: 2em;
     margin: auto;
     display: flex;
     width: calc(50em + 3vw);
-    background-color: aliceblue;
+    background-color: white;
+    border-radius: 1em;
 }
 .calc {
-    padding: 2em;
     width: 50%;
-    background-color: antiquewhite;
+    margin-right: 2em;
 }
 .display {
     padding: 2em;
     width: 50%;
-    background-color: white;
+    background-color: var(--very_dark_cyan);
+    border-radius: 1em;
+    color: var(--White);
+}
+#amt {
+    width: 100%;
+    font-size:1.5em;
+    text-align: right;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    background-color: var(--light_grayish_cyan2);
+    border: 0px;
+    margin-bottom: 1em;
+    margin-top: .3rem;
+    -moz-appearance: textfield;
 }
