@@ -11,36 +11,55 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
+    .attribution { font-size: 11px; text-align: center; margin-top: 24vh}
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+  <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
+  <div class="split">SPLI<br>TTER</div>
   <div class="card_whole">
     <div class="calc">
       <p>Bill</p>
-      <input type="number" name="amount" id="amt" placeholder="Amount"><br>
+      <div class="curr_wrap">
+        <div class="dollar">$</div>
+        <input type="number" name="amount" id="amt" placeholder="0"><br>
+      </div>
 
-      Select Tip %
-      <button class="perc">5%</button>
-      <button class="perc">10%</button>
-      <button class="perc">15%</button>
-      <button class="perc">25%</button>
-      <button class="perc">50%</button>
-      <input type="number" name="custom" placeholder="Custom" id="custom">
-
-      Number of People
-      <input type="number" name="people" id="people">
+      <p>Select Tip %</p>
+      <div class="percents">
+        <div class="perc">5%</div>
+        <div class="perc">10%</div>
+        <div class="perc">15%</div>
+        <div class="perc">25%</div>
+        <div class="perc">50%</div>
+        <input type="number" name="custom" placeholder="Custom" id="custom">
+      </div>
+      <p>Number of People</p>
+      <div class="people_wrap">
+        <div class="user"><img alt="" src="https://image.flaticon.com/icons/png/512/1077/1077114.png"></div>
+        <input type="number" name="people" id="people" placeholder="">
+      </div>
     </div>
     <div class="display">
+      <div class="notreset">
+        <div class="tip">
+          <div class="text">
+            <p>Tip Amount</p>
+            <p class="smaller">/ person</p>
+          </div>
+          <div class="tip_display"></div>
+        </div>
+        <div class="total">
+          <div class="text">
+            <p>Total</p>
+            <p class="smaller">/ person</p>
+          </div>
+          <div class="total_display"></div>
+        </div>
+      </div>
 
-      Tip Amount
-      / person
-
-      Total
-      / person
-
-      Reset
+      <div class="reset">RESET</div> 
     </div>
   </div>
   <div class="attribution">
@@ -48,4 +67,27 @@
     Coded by <a href="#">Dan Martin</a>.
   </div>
 </body>
+<script>
+  const percent = Array.from(document.querySelectorAll('.perc'));
+
+  function output(e) {
+
+    // no value
+    if (document.querySelector('#amt').value === '' && document.querySelector('#people').value === '') {
+      console.log('no value');
+    }
+
+    // no people
+    else if (document.querySelector('#amt').value !== '' && document.querySelector('#people').value === '') {
+      console.log('no people')
+    }
+
+    // no amount
+    else if (document.querySelector('#amt').value === '' && document.querySelector('#people').value !== '') {
+      console.log('no amount')
+    }
+  }
+
+  percent.forEach(num => num.addEventListener('click', output));
+</script>
 </html>
