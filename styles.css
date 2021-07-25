@@ -42,6 +42,17 @@ p {
     width: 50%;
     margin-right: 2em;
 }
+.desc {
+    display:flex;
+    justify-content: space-between;
+}
+.warning1, .warning2{
+    color: rgba(255, 0, 0, 0.534);
+    padding-top: 0.3rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-align: right;
+}
 .display {
     padding: 2em;
     width: 50%;
