@@ -98,7 +98,11 @@ p {
     justify-content: space-between;
     font-weight: 700;
 }
-.perc, #custom {
+input[type=radio] {
+    display: none;
+}
+/* .perc, #custom { */
+input[type=radio] + label, #custom {
     background-color: var(--very_dark_cyan);
     font-family: 'Space Mono', monospace;
     font-weight: 700;
@@ -114,7 +118,8 @@ p {
     font-size: 1.3em;
     transition: background-color 0.18s;
 }
-.perc_active {
+/* .perc_active { */
+input[type=radio]:checked + label {
     background-color: hsl(172, 67%, 45%);
 
 }
@@ -187,4 +192,11 @@ p {
     color: hsl(183, 100%, 15%);
     background-color: hsl(172, 67%, 45%);
     transition: background-color 0.08s;
-};
+}
+
+.calc_butt:hover {
+    background-color: var(--light_grayish_cyan);
+}
+.calc_butt:active {
+    background-color: hsl(172, 82%, 38%);
+}

@@ -29,11 +29,22 @@
 
       <p>Select Tip %</p>
       <div class="percents">
-        <div class="perc">5%</div>
+        <input type="radio" name="radios" id="radio1" value="5" checked>
+        <label for="radio1">5%</label>
+        <input type="radio" name="radios" id="radio2" value="10">
+        <label for="radio2">10%</label>
+        <input type="radio" name="radios" id="radio3" value="15">
+        <label for="radio3">15%</label>
+        <input type="radio" name="radios" id="radio4" value="25">
+        <label for="radio4">25%</label>
+        <input type="radio" name="radios" id="radio5" value="50">
+        <label for="radio5">50%</label>
+
+        <!-- <div class="perc">5%</div>
         <div class="perc">10%</div>
         <div class="perc">15%</div>
         <div class="perc">25%</div>
-        <div class="perc">50%</div>
+        <div class="perc">50%</div> -->
         <input type="number" name="custom" placeholder="Custom" id="custom">
       </div>
       <div class="desc">
@@ -74,11 +85,10 @@
   const amountNum = document.querySelector('#amt');
   const peopleNum = document.querySelector('#people');
 
-  const percentNum = document.querySelectorAll('.perc');
   const custom = document.querySelector('#custom');
 
   const totalDisp = document.querySelector('.total_display'); 
-  const tipDisp = document.querySelector('.total_display'); 
+  const tipDisp = document.querySelector('.tip_display'); 
 
   const calcButt = document.querySelector('.calc_butt');
   const resetButt = document.querySelector('.reset');
@@ -87,33 +97,55 @@
   function amountValCheck() {
     if (amountNum.value.length !== 0) {
       console.log('amount is not empty')
-      return true
+      return 1
+    }
+    else {
+      return 0
     }
   }
 
   function peopleValCheck() {
     if (peopleNum.value.length !== 0) {
       console.log('people is not empty')
-      return true
+      return 1 
+    }
+    else {
+      return 0 
     }
   }
   
   amountNum.addEventListener('change', amountValCheck);
   peopleNum.addEventListener('change', peopleValCheck);
 
-  // percentNum.forEach(p => p.addEventListener('click', () => p.classList.toggle('perc_active')));
+  calcButt.addEventListener('click', calculate);
 
-  function select(e) {
-    console.log(e);
-  }
-  function percCheck() {
-    percentNum.forEach(function(p) {
-      if ((p.classList.contains('perc_active')) || (custom.value.length !== 0)) {
-        console.log(p.textContent);
-        console.log(true);
-        return true;
-      }
-    })
+  function calculate() {
+    if (amountValCheck() === 0 && peopleValCheck() === 0) {
+      amountNum.classList.add('active');
+      peopleNum.classList.add('active');
+    }
+    else if (amountValCheck() === 0) {
+      amountNum.classList.add('active');
+      peopleNum.classList.remove('active');
+    }
+    else if (peopleValCheck() === 0) {
+      peopleNum.classList.add('active');
+      amountNum.classList.remove('active');
+    }
+    else if (custom.value.length === 0){
+      let bill = parseInt( amountNum.value );
+      let ppl = parseInt( peopleNum.value );
+      let percVal = document.querySelector('input[name=radios]:checked').value
+      let perc = (percVal/100) * bill
+      console.log(perc);  
+      console.log(bill);
+      let totalPp = (bill + perc)/ppl
+      let tipPp = perc/ppl
+      console.log(totalPp);
+      console.log(tipPp);
+      tipDisp.textContent =  `${tipPp}`;
+      totalDisp.textContent =  `${totalPp}`;
+    }
   }
 
 
