@@ -80,13 +80,15 @@ p {
     padding: 0.3rem 0.6rem;
     border-radius: 0.3rem;
     background-color: var(--light_grayish_cyan2);
-    border: 0px;
     margin-bottom: 1.8em;
     margin-top: .3rem;
     -moz-appearance: textfield;
 }
 #people {
     margin-bottom: 0;
+}
+.active {
+    border: solid 2px rgba(255, 0, 0, 0.473);
 }
 .percents {
     padding: 0.8em 0em 1.4em 0;
@@ -112,6 +114,9 @@ p {
     font-size: 1.3em;
     transition: background-color 0.18s;
 }
+.active {
+    background-color: var(--dark_grayish_cyan);
+}
 #custom {
     text-align: center;
     border: 0px;
@@ -135,6 +140,8 @@ p {
 }
 
 .tip_display, .total_display {
+    font-size: 2.4rem;
+    font-weight: 700;
     width: 40%;
     height: 100%;
     color:hsl(172, 67%, 45%);
@@ -163,3 +170,20 @@ p {
 .reset:hover {
     background-color: var(--light_grayish_cyan);
 }
+
+.calc_butt {
+    border: none;
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: .5rem;
+    border-radius: 0.2rem;
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(172, 67%, 45%);
+    transition: background-color 0.08s;
+};

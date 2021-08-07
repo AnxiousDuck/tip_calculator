@@ -42,6 +42,7 @@
         <div class="user"><img alt="" src="https://image.flaticon.com/icons/png/512/1077/1077114.png"></div>
         <input type="number" name="people" id="people" placeholder="">
       </div>
+      <div class="result"><button class="calc_butt">CALCULATE</button></div>
     </div>
     <div class="display">
       <div class="notreset">
@@ -70,47 +71,35 @@
   </div>
 </body>
 <script>
-  const percent = Array.from(document.querySelectorAll('.perc'));
-  const peeps = document.querySelector('#people');
+  const amountNum = document.querySelector('#amt');
+  const peopleNum = document.querySelector('#people');
 
-  const amount = document.querySelector('#amt');
-  const warning1 = document.querySelector('.warning1')
-  const warning2 = document.querySelector('.warning2')
-  
-  function output(e) {
+  const percentNum = document.querySelectorAll('.perc');
 
+  const totalDisp = document.querySelector('.total_display'); 
+  const tipDisp = document.querySelector('.total_display'); 
 
-    // no value
-    if (document.querySelector('#amt').value === '' && document.querySelector('#people').value === '') {
-      console.log('no value');
-      amount.style.border = 'solid 2px red';
-      peeps.style.border = 'solid 2px red';
-      warning1.textContent = 'This field cant be empty'
-      warning2.textContent = 'This field cant be empty'
-    }
+  const calcButt = document.querySelector('.calc_butt');
+  const resetButt = document.querySelector('.reset');
 
-    // no people
-    else if (document.querySelector('#amt').value !== '' && document.querySelector('#people').value === '') {
-      console.log('no people')
-      peeps.style.border = 'solid 2px red';
-      warning2.textContent = 'This field cant be empty'
-    }
+  percentNum.forEach(p => p.addEventListener('click', select));
 
-    // no amount
-    else if (document.querySelector('#amt').value === '' && document.querySelector('#people').value !== '') {
-      console.log('no amount')
-      warning1.textContent = 'This field cant be empty'
-      amount.style.border = 'solid 2px red';
-    }
+  function amountValCheck() {
+    console.log(amountNum.value.length);
+    console.log(amountNum.value);
   }
+  function peopleValCheck() {
+    console.log(peopleNum.value.length);
+    console.log(peopleNum.value);
+  }
+  
+  amountNum.addEventListener('change', amountValCheck);
+  peopleNum.addEventListener('change', peopleValCheck);
 
-  percent.forEach(num => num.addEventListener('click', output));
 
-  peeps.addEventListener("keydown", function (e) {
-    if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
-        output();
-    }
-  })
+  function select(e) {
+    console.log(e);
+  }
 
 </script>
 </html>
