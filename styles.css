@@ -114,8 +114,9 @@ p {
     font-size: 1.3em;
     transition: background-color 0.18s;
 }
-.active {
-    background-color: var(--dark_grayish_cyan);
+.perc_active {
+    background-color: hsl(172, 67%, 45%);
+
 }
 #custom {
     text-align: center;

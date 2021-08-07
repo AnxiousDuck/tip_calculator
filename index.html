@@ -82,7 +82,6 @@
   const calcButt = document.querySelector('.calc_butt');
   const resetButt = document.querySelector('.reset');
 
-  percentNum.forEach(p => p.addEventListener('click', select));
 
   function amountValCheck() {
     console.log(amountNum.value.length);
@@ -96,10 +95,21 @@
   amountNum.addEventListener('change', amountValCheck);
   peopleNum.addEventListener('change', peopleValCheck);
 
+  percentNum.forEach(p => p.addEventListener('click', () => p.classList.toggle('perc_active')));
 
   function select(e) {
     console.log(e);
   }
+  function percCheck() {
+    percentNum.forEach(function(p) {
+      if (p.classList.contains('perc_active')) {
+        console.log(p.textContent);
+        console.log(true);
+        return true;
+      }
+    })
+  }
+
 
 </script>
 </html>
