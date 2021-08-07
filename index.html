@@ -75,6 +75,7 @@
   const peopleNum = document.querySelector('#people');
 
   const percentNum = document.querySelectorAll('.perc');
+  const custom = document.querySelector('#custom');
 
   const totalDisp = document.querySelector('.total_display'); 
   const tipDisp = document.querySelector('.total_display'); 
@@ -84,25 +85,30 @@
 
 
   function amountValCheck() {
-    console.log(amountNum.value.length);
-    console.log(amountNum.value);
+    if (amountNum.value.length !== 0) {
+      console.log('amount is not empty')
+      return true
+    }
   }
+
   function peopleValCheck() {
-    console.log(peopleNum.value.length);
-    console.log(peopleNum.value);
+    if (peopleNum.value.length !== 0) {
+      console.log('people is not empty')
+      return true
+    }
   }
   
   amountNum.addEventListener('change', amountValCheck);
   peopleNum.addEventListener('change', peopleValCheck);
 
-  percentNum.forEach(p => p.addEventListener('click', () => p.classList.toggle('perc_active')));
+  // percentNum.forEach(p => p.addEventListener('click', () => p.classList.toggle('perc_active')));
 
   function select(e) {
     console.log(e);
   }
   function percCheck() {
     percentNum.forEach(function(p) {
-      if (p.classList.contains('perc_active')) {
+      if ((p.classList.contains('perc_active')) || (custom.value.length !== 0)) {
         console.log(p.textContent);
         console.log(true);
         return true;
