@@ -200,3 +200,29 @@ input[type=radio]:checked + label {
 .calc_butt:active {
     background-color: hsl(172, 82%, 38%);
 }
+
+
+@media only screen and (max-width: 768px) {
+    .card_whole {
+        display: flex;
+        flex-flow: column nowrap;
+        width: auto;
+        padding: 2.5rem;
+    }
+    .calc {
+        width: 100%;
+        margin-right: 0;
+    }
+    .display {
+        margin-top: 2rem;
+        padding: 2em;
+        width: 100%;
+        background-color: var(--very_dark_cyan);
+        border-radius: 1em;
+        color: var(--White);
+    }
+    .split {
+        padding: 3rem 0 5rem 0;
+    }
+
+}
