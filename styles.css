@@ -222,7 +222,58 @@ input[type=radio]:checked + label {
         color: var(--White);
     }
     .split {
+        font-size: 24px;
         padding: 3rem 0 5rem 0;
+    }
+    input[type=radio] + label, #custom {
+        background-color: var(--very_dark_cyan);
+        font-family: 'Space Mono', monospace;
+        font-weight: 700;
+        border-radius: .3em;
+        color: var(--White);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 46%;
+        height: 2.6em;
+        margin: 0.3em 0em;
+        -moz-appearance: textfield;
+        font-size: 1.3em;
+        transition: background-color 0.18s;
+    }
+    input[type=radio]:checked + label {
+        background-color: hsl(172, 67%, 45%);
+        color:hsl(183, 100%, 15%)
+
+    }
+    
+    .percents {
+        padding: 0.8em 0em 1.4em 0;
+        display: flex;
+        flex-flow: wrap row;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 700;
+    }
+    #amt, #people{
+        font-family: 'Space Mono', monospace;
+        font-weight: 700;
+        width: 100%;
+        font-size: 26px;
+        text-align: right;
+        padding: 0.3rem 0.6rem;
+        border-radius: 0.3rem;
+        background-color: var(--light_grayish_cyan2);
+        margin-bottom: 1.8em;
+        margin-top: .3rem;
+        -moz-appearance: textfield;
+    }
+    #custom {
+        background-color: var(--light_grayish_cyan2);
+    }
+    .attribution {
+        margin-top: 4vh;
+        margin-bottom: 1vh;
     }
 
 }
